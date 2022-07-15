@@ -22,7 +22,10 @@ class MaxStack(list):
         self.max_cache.pop()
         return x
     def get_max(self):
-        return self.max_cache[-1]
+        try:
+            return self.max_cache[-1].value
+        except:
+            return -1 * float('inf')
 def main():
     max_stack = MaxStack()
     num_queries = int((input()))
@@ -33,7 +36,7 @@ def main():
         elif query[0] == 'pop':
             max_stack.pop()
         elif query[0] == 'max':
-            print(max_stack.get_max().value)
+            print(max_stack.get_max())
         else:
             assert(0)
 
