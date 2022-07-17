@@ -55,8 +55,6 @@ def main(lst, k):
     return maxes
 if __name__ == '__main__':
     n = int(input())
-    input_sequence = [int(i) for i in input().split()]
-    assert len(input_sequence) == n
-    window_size = int(input())
-
-    print(*main(input_sequence, window_size))
+    lst = list(map(int, input().split()))
+    k = int(input())
+    print(main(lst, k))
